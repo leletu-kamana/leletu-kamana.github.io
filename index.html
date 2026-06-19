@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Leletu Kamana | Software Development Student Portfolio</title>
+  <meta name="description" content="1st Year Software Development Student Portfolio - Leletu Kamana" />
+
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="Leletu Kamana | Software Developer Portfolio" />
+  <meta property="og:description" content="1st Year Software Development Student Portfolio" />
+  <meta property="og:image" content="leletu-kamana.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon placeholder - replace favicon.ico with your own later -->
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- TailwindCSS via CDN (no install needed) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Our custom styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-slate-950 text-slate-100">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <span class="font-bold text-cyan-400 text-lg">Leletu Kamana</span>
+
+      <div class="hidden md:flex gap-8 text-sm text-slate-300">
+        <a href="#about" class="hover:text-cyan-400 transition">About</a>
+        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="min-h-screen flex items-center justify-center px-6 pt-24 fade-in">
+    <div class="text-center max-w-2xl">
+
+      <!-- Replace src below with your own photo URL -->
+      <img
+        src="leletu-kamana.jpg"
+        alt="Photo of Leletu Kamana"
+        class="w-36 h-36 md:w-40 md:h-40 rounded-full mx-auto border-4 border-cyan-500 object-cover shadow-lg shadow-cyan-500/20"
+      />
+
+      <h1 class="text-4xl md:text-5xl font-extrabold mt-6">
+        Leletu Kamana
+      </h1>
+
+      <p class="text-cyan-400 text-lg md:text-xl mt-3 font-medium">
+        1st Year Software Development Student
+      </p>
+
+      <!-- Replace this paragraph with your own 2-3 line bio -->
+      <p class="text-slate-300 mt-5 leading-relaxed">
+        I'm a first-year Software
+        Development student passionate about building clean, functional web
+        applications. I enjoy learning new languages and frameworks, and I'm
+        currently focused on strengthening my foundations in Java and JavaScript.
+      </p>
+
+      <p class="text-slate-500 mt-4 text-sm">
+        📍 Port Elizabeth, South Africa
+      </p>
+
+      <!-- ============ SOCIAL LINKS ============ -->
+      <div class="flex justify-center gap-6 mt-8">
+
+        <!-- GitHub -->
+        <a href="https://github.com/leletu-kamana" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.292 3.438 9.787 8.207 11.387.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.613-4.042-1.613-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.807 1.305 3.492.998.107-.776.42-1.305.763-1.605-2.665-.304-5.466-1.333-5.466-5.931 0-1.31.468-2.381 1.235-3.221-.123-.303-.535-1.527.117-3.176 0 0 1.008-.322 3.301 1.23.958-.266 1.983-.399 3.003-.404 1.02.005 2.045.138 3.004.404 2.291-1.552 3.298-1.23 3.298-1.23.653 1.649.241 2.873.119 3.176.77.84 1.233 1.911 1.233 3.221 0 4.61-2.803 5.625-5.476 5.921.431.372.815 1.102.815 2.222 0 1.604-.015 2.896-.015 3.289 0 .319.218.694.825.576C20.565 22.08 24 17.587 24 12.297 24 5.67 18.627.297 12 .297z"/></svg>
+        </a>
+
+        <!-- LinkedIn - replace # with your profile URL -->
+        <a href="https://www.linkedin.com/in/leletu-kamana-1a22b8416" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.7-1.3 2.4-2.7 4.9-2.7 5.2 0 6.3 3.4 6.3 7.8V24h-5V15.2c0-2.1 0-4.8-2.9-4.8-2.9 0-3.3 2.2-3.3 4.6V24h-5V8z"/></svg>
+        </a>
+
+        <!-- Facebook - replace # with your profile URL -->
+        <a href="https://www.facebook.com/lelethu.kamana" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.406.593 24 1.325 24H12.82v-9.294H9.692V11.01h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24l-1.918.001c-1.504 0-1.796.716-1.796 1.767v2.317h3.59l-.467 3.696h-3.123V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .593 23.406 0 22.675 0z"/></svg>
+        </a>
+
+        <!-- Instagram - replace # with your profile URL -->
+        <a href="https://www.instagram.com/l_kman_26/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.427.415a4.92 4.92 0 011.675 1.095 4.92 4.92 0 011.094 1.676c.175.456.362 1.256.416 2.426.058 1.268.069 1.648.069 4.852 0 3.204-.012 3.584-.07 4.85-.054 1.17-.24 1.97-.415 2.427a4.92 4.92 0 01-1.095 1.675 4.92 4.92 0 01-1.676 1.094c-.456.175-1.256.362-2.426.416-1.268.058-1.648.069-4.852.069-3.204 0-3.584-.012-4.85-.07-1.17-.054-1.97-.24-2.427-.415a4.92 4.92 0 01-1.675-1.095 4.92 4.92 0 01-1.094-1.676c-.175-.456-.362-1.256-.416-2.426C2.175 15.583 2.163 15.203 2.163 12c0-3.204.012-3.584.07-4.85.054-1.17.24-1.97.415-2.427a4.92 4.92 0 011.095-1.675 4.92 4.92 0 011.676-1.094c.456-.175 1.256-.362 2.426-.416C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.776.131 4.695.346 3.782.684 2.9 1.01 2.136 1.537 1.44 2.233.744 2.929.217 3.693-.109 4.575c-.338.913-.553 1.994-.612 3.27C-.013 8.332 0 8.741 0 12s.013 3.668.072 4.948c.059 1.276.274 2.357.612 3.27.326.882.853 1.646 1.549 2.342.696.696 1.46 1.223 2.342 1.549.913.338 1.994.553 3.27.612 1.28.059 1.689.072 4.948.072s3.668-.013 4.948-.072c1.276-.059 2.357-.274 3.27-.612.882-.326 1.646-.853 2.342-1.549.696-.696 1.223-1.46 1.549-2.342.338-.913.553-1.994.612-3.27.059-1.28.072-1.689.072-4.948s-.013-3.668-.072-4.948c-.059-1.276-.274-2.357-.612-3.27-.326-.882-.853-1.646-1.549-2.342-.696-.696-1.46-1.223-2.342-1.549-.913-.338-1.994-.553-3.27-.612C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 106.162 6.162A6.169 6.169 0 0012 5.838zm0 10.162a3.999 3.999 0 113.999-3.999A4.006 4.006 0 0112 16zm6.406-11.845a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z"/></svg>
+        </a>
+
+        <!-- Student email -->
+        <a href="mailto:st10514888@rcconnect.edu.za" class="social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M2.25 5.25A2.25 2.25 0 014.5 3h15a2.25 2.25 0 012.25 2.25v13.5A2.25 2.25 0 0119.5 21H4.5A2.25 2.25 0 012.25 18.75V5.25zm1.5.75v12.75c0 .414.336.75.75.75h15a.75.75 0 00.75-.75V6a.75.75 0 00-.75-.75h-15a.75.75 0 00-.75.75zm1.27.533L12 12.684l6.98-5.151a.75.75 0 10-.86-1.182L12 10.816 4.38 4.35a.75.75 0 00-.86 1.183z"/></svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section id="about" class="max-w-6xl mx-auto px-6 py-20 fade-in">
+
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Card 1: Languages -->
+      <div class="card">
+        <h3>💻 Languages</h3>
+        <ul class="text-slate-300 space-y-1">
+          <li>Java</li>
+          <li>HTML &amp; CSS</li>
+          <li>JavaScript</li>
+          <!-- Add or remove languages as needed -->
+        </ul>
+      </div>
+
+      <!-- Card 2: Tools -->
+      <div class="card">
+        <h3>🛠️ Tools</h3>
+        <ul class="text-slate-300 space-y-1">
+          <li>Git &amp; GitHub</li>
+          <li>VS Code</li>
+          <li>NetBeans</li>
+          <!-- Add or remove tools as needed -->
+        </ul>
+      </div>
+
+      <!-- Card 3: Currently Learning -->
+      <div class="card">
+        <h3>📚 Currently Learning</h3>
+        <ul class="text-slate-300 space-y-1">
+          <li>Object-Oriented Programming</li>
+          <li>Databases</li>
+          <li>Web Development</li>
+          <!-- Add or remove topics as needed -->
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS SECTION ============ -->
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-20 fade-in">
+
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Projects</h2>
+    <p class="text-slate-400 text-center mb-12">
+      Pulled automatically from my GitHub repositories
+    </p>
+
+    <!-- Repos get inserted here by script.js -->
+    <div id="projects-container" class="grid md:grid-cols-3 gap-6">
+      <!-- Loading skeleton cards shown while fetching -->
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+
+    <!-- Error message shown only if fetch fails -->
+    <p id="projects-error" class="text-center text-red-400 mt-6 hidden">
+      Couldn't load projects right now. Please check back later.
+    </p>
+
+    <div class="text-center mt-10">
+      <button id="show-more" class="hidden bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-6 py-3 rounded-lg transition">
+        Show More Projects
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="text-center py-8 border-t border-slate-800 text-slate-500 text-sm">
+    © <span id="year"></span> Leletu Kamana • Built with HTML + Tailwind + JavaScript
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+
+</body>
+</html>
