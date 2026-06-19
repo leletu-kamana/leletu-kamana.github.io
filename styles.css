@@ -188,13 +188,3 @@ body {
     left: 150%;
   }
 }
-
-/* ===========================================
-   Responsive adjustments
-   =========================================== */
-ol {
-  font:
-    1rem "Fira Sans",
-    sans-serif;
-  margin-bottom: 0.5rem;
-}
