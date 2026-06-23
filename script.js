@@ -10,11 +10,12 @@
    console from showing errors on pages that don't need
    that feature.
 
-   This file does 4 things:
-   1. Fetches GitHub repos and displays them (projects.html only)
-   2. Handles the "Show More Projects" button (projects.html only)
-   3. Toggles the mobile menu open/closed (every page)
-   4. Fades sections in as you scroll, and sets the footer year (every page)
+   This file does 5 things:
+   1. Renders the Lucide icons (every page)
+   2. Fetches GitHub repos and displays them (projects.html only)
+   3. Handles the "Show More Projects" button (projects.html only)
+   4. Toggles the mobile menu open/closed (every page)
+   5. Fades sections in as you scroll, and sets the footer year (every page)
    ========================================================= */
 
 // STEP 1: Set your GitHub username here.
@@ -152,6 +153,27 @@ if (showMoreButton) {
 
 
 /* =========================================================
+   Render the Lucide icons (github, linkedin, mail, etc).
+   The Lucide script tag in each HTML <head> loads the
+   library but does NOT draw the icons by itself - this
+   function call is what actually turns each
+   <i data-lucide="..."></i> into a visible icon.
+
+   We check "typeof lucide" first in case the CDN script
+   is ever slow, blocked, or fails to load - this stops
+   the rest of script.js (mobile menu, scroll fade, etc)
+   from breaking if that happens.
+   ========================================================= */
+function setupIcons() {
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  } else {
+    console.log("Lucide icons did not load - check your internet connection or the CDN link in <head>.");
+  }
+}
+
+
+/* =========================================================
    Mobile menu toggle
    Tapping the hamburger icon shows/hides the dropdown menu.
    This runs on every page since every page has a navbar.
@@ -218,6 +240,7 @@ document.addEventListener("DOMContentLoaded", function () {
     getRepos();
   }
 
+  setupIcons();
   setupMobileMenu();
   setupScrollAnimations();
   setFooterYear();
