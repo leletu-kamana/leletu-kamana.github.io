@@ -7,6 +7,16 @@
   <title>Contact | Leletu Kamana</title>
   <meta name="description" content="Get in touch with Leletu Kamana" />
 
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://leletu-kamana.github.io/contact.html" />
+
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="Contact | Leletu Kamana" />
+  <meta property="og:description" content="Get in touch with Leletu Kamana" />
+  <meta property="og:image" content="https://leletu-kamana.github.io/leletu-kamana.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://leletu-kamana.github.io/contact.html" />
+
   <link rel="icon" href="favicon.ico" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -55,14 +65,26 @@
     </p>
 
     <!--
-      FORM NOTE: This uses Formspree, a free form backend for static sites.
-      1. Go to https://formspree.io and sign up free
-      2. Create a new form, copy the endpoint it gives you
-      3. Replace YOUR-FORM-ID below with that endpoint ID
-      Until you do that, the form will not actually send anywhere.
+      FORM NOTE: This form uses a "mailto" action, which opens the
+      visitor's own email app (Outlook, Gmail desktop app, Mail, etc)
+      with the message pre-filled, instead of sending it directly
+      from the website.
+
+      This is the simplest option for a static GitHub Pages site with
+      no backend, but it has one real limitation worth knowing:
+      it ONLY works if the visitor has an email app installed and
+      configured on their device. On many phones/browsers it does
+      nothing visible if no mail app is set up - so for visitors
+      browsing on mobile without a mail app, this form may appear
+      "broken" even though the code is correct.
+
+      If you want messages to send directly without relying on the
+      visitor's own email app, Formspree (mentioned in earlier
+      versions of this file) is the more reliable alternative for
+      a static site - free for basic use, no backend needed either.
     -->
     <form action="mailto:st10514888@rcconnect.edu.za" method="post" enctype="text/plain" class="space-y-4">
-      
+
       <input
         type="text"
         name="name"
@@ -105,10 +127,9 @@
     © <span id="year"></span> Leletu Kamana • Built with HTML + Tailwind + JavaScript
   </footer>
 
+  <!-- Icon rendering (lucide.createIcons) now happens automatically
+       inside script.js, so no extra script tag is needed here. -->
   <script src="script.js"></script>
-  <script>
-    lucide.createIcons();
-  </script>
 
 </body>
 </html>
