@@ -1,7 +1,7 @@
 <h1 align="center">Hi, I'm Leletu Kamana 👋</h1>
 
 <p align="center">
-  1st Year Software Development Student @ IIE Rosebank College, South Africa
+  1st Year Software Development Student @ IIE Rosebank International University-College, Nelson Mandela Bay, South Africa
 </p>
 
 <p align="center">
