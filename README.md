@@ -49,14 +49,41 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
 
 ### 📊 GitHub Stats
 
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true" alt="Leletu's GitHub stats" height="170" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leletu-kamana&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" height="170" />
-</p>
+<table align="center" width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true" alt="Leletu's GitHub stats" width="100%" />
+    </td>
+    <td width="50%" align="center">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leletu-kamana&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true" alt="GitHub streak stats" width="100%" />
+    </td>
+  </tr>
+</table>
 
-<p align="left">
-  <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true" alt="GitHub streak stats" />
-</p>
+<!--
+  NOTES FOR LELETU (delete this comment block once you're happy with the README):
+
+  LAYOUT: This uses an HTML table to match the 2-box-top, 1-box-bottom
+  layout you sketched. Top row = Stats card + Top Languages card side by
+  side, each taking up exactly half the width (width="50%" on each <td>).
+  Bottom row = Streak stats, stretched across the FULL width using
+  colspan="2" (this tells the table "let this cell take up both columns
+  instead of just one").
+
+  Each image has width="100%" so it stretches to fill whatever space its
+  table cell gives it, rather than staying at its natural fixed size. This
+  is what makes the boxes match your sketch's proportions instead of
+  floating at their default sizes.
+
+  On a narrow screen (like viewing your profile on a phone), GitHub may
+  still shrink the table responsively, but the 2-top/1-bottom structure
+  itself will hold - it won't reflow into 3 stacked rows.
+-->
 
 <!--
   NOTES FOR LELETU (delete this comment block once you're happy with the README):
