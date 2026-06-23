@@ -1,10 +1,20 @@
 /* =========================================================
    PORTFOLIO SCRIPT.JS
-   Beginner-friendly version - plain functions, no frameworks.
-   This file does 3 things:
-   1. Fetches GitHub repos and displays them as cards
-   2. Handles the "Show More Projects" button
-   3. Fades sections in as you scroll down the page
+   This single file is shared by all 4 pages (index.html,
+   about.html, projects.html, contact.html).
+
+   Because not every page has the same elements (only
+   projects.html has the repo cards, for example), each
+   feature below checks "does this element actually exist
+   on this page?" before trying to use it. This stops the
+   console from showing errors on pages that don't need
+   that feature.
+
+   This file does 4 things:
+   1. Fetches GitHub repos and displays them (projects.html only)
+   2. Handles the "Show More Projects" button (projects.html only)
+   3. Toggles the mobile menu open/closed (every page)
+   4. Fades sections in as you scroll, and sets the footer year (every page)
    ========================================================= */
 
 // STEP 1: Set your GitHub username here.
@@ -21,7 +31,9 @@ var visibleCount = reposPerPage;
 // Will store the repos we get back from GitHub once they load.
 var allRepos = [];
 
-// Grab the HTML elements we need to update.
+// Grab the elements used on the Projects page.
+// On other pages these will simply be "null", which is fine -
+// we check for that before using them further down.
 var projectsContainer = document.getElementById("projects-container");
 var showMoreButton = document.getElementById("show-more");
 var errorMessage = document.getElementById("projects-error");
@@ -33,15 +45,10 @@ var errorMessage = document.getElementById("projects-error");
    ========================================================= */
 function getRepos() {
 
-  // Build the API URL using the username above.
-  // "sort=updated" makes GitHub return the most recently
-  // updated repos first.
   var apiUrl = "https://api.github.com/users/" + githubUsername + "/repos?sort=updated&per_page=100";
 
   fetch(apiUrl)
     .then(function (response) {
-      // If GitHub sends back an error status (like 404),
-      // throw an error so it gets caught below.
       if (!response.ok) {
         throw new Error("GitHub API request failed");
       }
@@ -58,17 +65,13 @@ function getRepos() {
 
       allRepos = originalRepos;
 
-      // Now that we have real data, draw the cards on screen.
       showRepoCards();
 
-      // Only show the "Show More" button if there are
-      // more repos than we're currently displaying.
       if (allRepos.length > reposPerPage) {
         showMoreButton.classList.remove("hidden");
       }
     })
     .catch(function (error) {
-      // Something went wrong (bad username, no internet, etc).
       console.log("Error fetching repos:", error);
       projectsContainer.innerHTML = "";
       errorMessage.classList.remove("hidden");
@@ -83,10 +86,8 @@ function getRepos() {
    ========================================================= */
 function showRepoCards() {
 
-  // Clear out the skeleton loading cards / old cards.
   projectsContainer.innerHTML = "";
 
-  // Only loop through up to "visibleCount" repos.
   var reposToShow = allRepos.slice(0, visibleCount);
 
   for (var i = 0; i < reposToShow.length; i++) {
@@ -104,26 +105,18 @@ function showRepoCards() {
    ========================================================= */
 function buildRepoCard(repo) {
 
-  // Create the outer card div.
   var card = document.createElement("div");
   card.className = "repo-card";
 
-  // Use the description if there is one, otherwise show
-  // a simple fallback message.
   var description = repo.description ? repo.description : "No description provided.";
 
-  // Format the last updated date into something readable,
-  // e.g. "12 Jun 2026" instead of the raw timestamp.
   var updatedDate = new Date(repo.updated_at).toLocaleDateString();
 
-  // Build the "Live Demo" button only if the repo has a
-  // homepage link set. Otherwise leave it blank.
   var demoButtonHtml = "";
   if (repo.homepage) {
     demoButtonHtml = '<a class="btn-demo" href="' + repo.homepage + '" target="_blank" rel="noopener noreferrer">Live Demo</a>';
   }
 
-  // Fill in the card's HTML using the repo's data.
   card.innerHTML =
     "<h3>" + repo.name + "</h3>" +
     '<p class="repo-desc">' + description + "</p>" +
@@ -141,24 +134,43 @@ function buildRepoCard(repo) {
 
 
 /* =========================================================
-   "Show More Projects" button click handler
+   "Show More Projects" button click handler.
+   Only runs if the button actually exists on this page.
    ========================================================= */
-showMoreButton.addEventListener("click", function () {
+if (showMoreButton) {
+  showMoreButton.addEventListener("click", function () {
 
-  // Reveal 8 more repos than before.
-  visibleCount = visibleCount + reposPerPage;
+    visibleCount = visibleCount + reposPerPage;
 
-  showRepoCards();
+    showRepoCards();
 
-  // Hide the button once everything is already visible.
-  if (visibleCount >= allRepos.length) {
-    showMoreButton.classList.add("hidden");
-  }
-});
+    if (visibleCount >= allRepos.length) {
+      showMoreButton.classList.add("hidden");
+    }
+  });
+}
 
 
 /* =========================================================
-   Fade-in sections as the user scrolls
+   Mobile menu toggle
+   Tapping the hamburger icon shows/hides the dropdown menu.
+   This runs on every page since every page has a navbar.
+   ========================================================= */
+function setupMobileMenu() {
+
+  var menuButton = document.getElementById("mobile-menu-btn");
+  var mobileMenu = document.getElementById("mobile-menu");
+
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
+}
+
+
+/* =========================================================
+   Fade-in sections as the user scrolls.
    Uses IntersectionObserver, which just means:
    "watch these elements, and tell me when they enter
    the visible part of the screen."
@@ -173,7 +185,7 @@ function setupScrollAnimations() {
         entries[i].target.classList.add("visible");
       }
     }
-  }, { threshold: 0.15 }); // trigger when 15% of the section is visible
+  }, { threshold: 0.15 });
 
   for (var i = 0; i < sections.length; i++) {
     observer.observe(sections[i]);
@@ -183,7 +195,7 @@ function setupScrollAnimations() {
 
 /* =========================================================
    Set the footer year automatically so it never goes
-   out of date.
+   out of date. Runs on every page.
    ========================================================= */
 function setFooterYear() {
   var yearSpan = document.getElementById("year");
@@ -195,9 +207,18 @@ function setFooterYear() {
 
 /* =========================================================
    Run everything once the page has loaded.
+   Each function checks for its own elements, so it's safe
+   to call all of them on every page.
    ========================================================= */
 document.addEventListener("DOMContentLoaded", function () {
-  getRepos();
+
+  // Only fetch GitHub repos if we're on a page that has
+  // the projects container (i.e. projects.html).
+  if (projectsContainer) {
+    getRepos();
+  }
+
+  setupMobileMenu();
   setupScrollAnimations();
   setFooterYear();
 });
