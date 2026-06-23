@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Projects | [YOUR NAME]</title>
+  <meta name="description" content="GitHub projects by [YOUR NAME]" />
+
+  <link rel="icon" href="favicon.ico" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-100">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="font-bold text-cyan-400 text-lg">[YOUR NAME]</a>
+
+      <div class="hidden md:flex gap-8 text-sm text-slate-300">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About &amp; Skills</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-cyan-400">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden flex-col bg-slate-900 border-t border-slate-800 px-6 py-4 gap-4 flex">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About &amp; Skills</a>
+      <a href="projects.html" class="nav-link active">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="max-w-5xl mx-auto px-6 pt-32 pb-12 text-center fade-in">
+    <h1 class="text-4xl md:text-5xl font-extrabold">Projects</h1>
+    <p class="text-slate-400 mt-4 max-w-xl mx-auto">
+      Pulled automatically from my GitHub repositories - push new code and
+      it will show up here next time the page loads.
+    </p>
+  </section>
+
+  <!-- ============ PROJECTS GRID ============ -->
+  <section class="max-w-6xl mx-auto px-6 pb-24 fade-in">
+
+    <!-- Repos get inserted here by script.js -->
+    <div id="projects-container" class="grid md:grid-cols-3 gap-6">
+      <!-- Loading skeleton cards shown while fetching -->
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+
+    <!-- Error message shown only if the fetch fails -->
+    <p id="projects-error" class="text-center text-red-400 mt-6 hidden">
+      Couldn't load projects right now. Please check back later.
+    </p>
+
+    <div class="text-center mt-10">
+      <button id="show-more" class="hidden btn-primary">
+        Show More Projects
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="text-center py-8 border-t border-slate-800 text-slate-500 text-sm">
+    © <span id="year"></span> [YOUR NAME] • Built with HTML + Tailwind + JavaScript
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
