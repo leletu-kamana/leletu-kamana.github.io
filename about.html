@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About &amp; Skills | [YOUR NAME]</title>
+  <meta name="description" content="About [YOUR NAME] and their technical skills" />
+
+  <link rel="icon" href="favicon.ico" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-100">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="font-bold text-cyan-400 text-lg">[YOUR NAME]</a>
+
+      <div class="hidden md:flex gap-8 text-sm text-slate-300">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About &amp; Skills</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-cyan-400">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden flex-col bg-slate-900 border-t border-slate-800 px-6 py-4 gap-4 flex">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About &amp; Skills</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="max-w-5xl mx-auto px-6 pt-32 pb-12 text-center fade-in">
+    <h1 class="text-4xl md:text-5xl font-extrabold">About Me</h1>
+    <p class="text-slate-400 mt-4 max-w-xl mx-auto">
+      A bit more about who I am, what I know, and what I'm currently learning.
+    </p>
+  </section>
+
+  <!-- ============ ABOUT TEXT ============ -->
+  <section class="max-w-3xl mx-auto px-6 pb-16 fade-in">
+    <!-- Replace this with a longer version of your bio than the one on Home -->
+    <p class="text-slate-300 leading-relaxed text-center md:text-left">
+      [WRITE A LONGER BIO HERE. Talk about why you chose Software Development,
+      what excites you about coding, and anything else you'd like visitors to
+      know about you - hobbies, goals, what you hope to build one day, etc.]
+    </p>
+  </section>
+
+  <!-- ============ SKILLS SECTION ============ -->
+  <!-- The 3 cards sit side-by-side on desktop (md:grid-cols-3)
+       and stack on top of each other on mobile automatically. -->
+  <section class="max-w-6xl mx-auto px-6 pb-24 fade-in">
+
+    <h2 class="text-3xl font-bold text-center mb-12">My Skills</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Card 1: Languages -->
+      <div class="card">
+        <h3>💻 Languages</h3>
+        <ul class="text-slate-300 space-y-1">
+          <li>Java</li>
+          <li>HTML &amp; CSS</li>
+          <li>JavaScript</li>
+          <!-- Add or remove languages as needed -->
+        </ul>
+      </div>
+
+      <!-- Card 2: Tools -->
+      <div class="card">
+        <h3>🛠️ Tools</h3>
+        <ul class="text-slate-300 space-y-1">
+          <li>Git &amp; GitHub</li>
+          <li>VS Code</li>
+          <li>NetBeans</li>
+          <!-- Add or remove tools as needed -->
+        </ul>
+      </div>
+
+      <!-- Card 3: Currently Learning -->
+      <div class="card">
+        <h3>📚 Currently Learning</h3>
+        <ul class="text-slate-300 space-y-1">
+          <li>Object-Oriented Programming</li>
+          <li>Databases</li>
+          <li>Web Development</li>
+          <!-- Add or remove topics as needed -->
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="text-center py-8 border-t border-slate-800 text-slate-500 text-sm">
+    © <span id="year"></span> [YOUR NAME] • Built with HTML + Tailwind + JavaScript
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
