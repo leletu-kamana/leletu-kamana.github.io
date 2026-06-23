@@ -49,52 +49,46 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
 
 ### 📊 GitHub Stats
 
-<table align="center" width="100%" cellspacing="0" cellpadding="0" bgcolor="#1a1b27">
-  <tr>
-    <td align="center" bgcolor="#1a1b27">
-      <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1b27" alt="Leletu's GitHub stats" width="100%" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center" bgcolor="#222a44">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leletu-kamana&layout=compact&theme=tokyonight&hide_border=true&bg_color=222a44&card_width=495" alt="Top languages" width="100%" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center" bgcolor="#283457">
-      <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true&background=283457" alt="GitHub streak stats" width="100%" />
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1b27" alt="Leletu's GitHub stats" width="100%" />
+</div>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leletu-kamana&layout=compact&theme=tokyonight&hide_border=true&bg_color=222a44&card_width=495" alt="Top languages" width="100%" />
+</div>
+<div align="center">
+  <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true&background=283457" alt="GitHub streak stats" width="100%" />
+</div>
 <!--
   NOTES FOR LELETU (delete this comment block once you're happy with the README):
 
-  IMPORTANT TECHNICAL NOTE: GitHub strips inline CSS style="" attributes
-  from README files for security reasons (it sanitizes HTML before
-  displaying it). Because of this, this version uses the older bgcolor=""
-  HTML attribute instead of style="background:...", since bgcolor IS
-  allowed through GitHub's sanitizer on table cells. This is the actual
-  reason the table looks like a real spreadsheet-style grid with visible
-  cell lines (cellspacing/cellpadding/border are also old-style HTML
-  attributes that survive GitHub's sanitizer, unlike modern CSS).
+  WHY <div> AND NOT <aside> / <section>: GitHub's README sanitizer only
+  keeps a specific older set of HTML tags and silently DELETES anything
+  outside that list - <div> survives, but <aside> and <section> (newer
+  HTML5 "semantic" tags) do not. Using them would have meant your three
+  blocks either lost their wrapper entirely or behaved unpredictably. <div>
+  is the closest tag GitHub actually allows that does the same "generic
+  container" job <aside>/<section> would have done.
 
-  HOW THE BLEND WORKS NOW: each table cell's bgcolor goes navy -> slightly
-  lighter navy-blue -> blue-purple, getting gradually lighter top to bottom.
-  Each card's OWN bg_color is set to match its cell's bgcolor exactly, so
-  the card blends into its own row with no visible seam INSIDE that row.
-  Between rows, the three different bgcolor steps create a smooth-ish
-  transition top to bottom, though it will look like 3 distinct color
-  bands rather than one perfectly smooth gradient, since true CSS
-  gradients aren't available here - this is the closest visual
-  approximation GitHub's sanitizer allows.
+  STRUCTURE: Each card now lives in its own separate <div align="center">
+  block, one per row, top to bottom: Stats, Top Languages, Streak. This
+  gives you 3 distinct, separated sections in the markdown source, even
+  though visually they'll still sit close together on the rendered page
+  (GitHub adds a little default spacing between block-level elements like
+  div automatically - there's no way to set that spacing to exactly zero
+  using only tags GitHub allows, since the spacing comes from GitHub's own
+  stylesheet, not from anything in this file).
 
-  WIDTH MATCHING: card_width=495 keeps the Top Languages row the same width
-  as the Stats card's natural ~500px width, so the grid's vertical edges
-  line up evenly between rows.
+  COLOR BLEND: since <div> doesn't support a bgcolor attribute (that's a
+  table-only legacy attribute), the color blend instead comes entirely from
+  each card's OWN bg_color/background URL parameter: navy (1a1b27) ->
+  navy-blue (222a44) -> blue-purple (283457), in that order top to bottom.
 
-  If you want different colors, change the three hex codes (1a1b27, 222a44,
-  283457) - just keep each card's own bg_color/background matching its own
-  row's bgcolor, in both places (the <td bgcolor=...> AND the image URL).
+  WIDTH MATCHING: card_width=495 keeps the Top Languages card the same
+  width as the Stats card's natural ~500px size, so all three divs line up
+  evenly instead of having mismatched widths.
+
+  If you want different colors, change all three hex codes together so the
+  blend stays smooth - 1a1b27, 222a44, and 283457 each appear once.
 
   Note: the Streak Stats card uses "background=" instead of "bg_color=" in
   its URL - that's not a typo, the streak-stats service just uses a
@@ -115,13 +109,19 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
 
   3. theme=tokyonight is just one style option. Other options include: dark,
      radical, merko, gruvbox, dracula, default (light). If you change the
-     theme, the bgcolor values above may clash with it - you'd want to pick
-     new hex colors that match the new theme's palette.
+     theme, the bg_color/background values above may clash with it - you'd
+     want to pick new hex colors that match the new theme's palette.
 
   4. Streak stats are calculated from PUBLIC contributions only, unless you
      turn on "Private contributions" from your profile's contribution graph
      dropdown (this is optional, not required).
 
+  5. These stats auto-update on their own - no action needed. The Stats
+     card refreshes roughly every 24 hours, and the Top Languages card
+     roughly every 6 days, since the free service caches results to avoid
+     overload. A brand new commit may take that long to show up - this is
+     normal, not a bug.
+-->
   5. These stats auto-update on their own - no action needed. The Stats
      card refreshes roughly every 24 hours, and the Top Languages card
      roughly every 6 days, since the free service caches results to avoid
