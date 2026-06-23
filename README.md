@@ -49,18 +49,20 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
 
 ### 📊 GitHub Stats
 
-<table align="center" width="100%">
+<table align="center" width="100%" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true&bg_color=90,1a1b27,283457" alt="Leletu's GitHub stats" width="100%" />
+    <td align="center" style="padding:0; margin:0;">
+      <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true&bg_color=90,1a1b27,1a1b27" alt="Leletu's GitHub stats" width="100%" />
     </td>
-    <td width="50%" align="center">
+  </tr>
+  <tr>
+    <td align="center" style="padding:0; margin:0;">
       <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leletu-kamana&layout=compact&theme=tokyonight&hide_border=true&bg_color=90,1a1b27,283457" alt="Top languages" width="100%" />
     </td>
   </tr>
   <tr>
-    <td colspan="2" align="center">
-      <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true&background=90,1a1b27,283457" alt="GitHub streak stats" width="100%" />
+    <td align="center" style="padding:0; margin:0;">
+      <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true&background=90,283457,283457" alt="GitHub streak stats" width="100%" />
     </td>
   </tr>
 </table>
@@ -68,40 +70,33 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
 <!--
   NOTES FOR LELETU (delete this comment block once you're happy with the README):
 
-  BORDERS: hide_border=true (already on all three cards) removes each card's
-  outline, so the eye doesn't see 3 separate boxes - just the content.
+  LAYOUT: All three cards are now stacked in a single column (one <tr> table
+  row per card, each holding just one <td>), top to bottom: Stats, Top
+  Languages, then Streak. cellspacing="0" and cellpadding="0" on the
+  <table>, plus padding:0/margin:0 on each <td>, remove the table's own
+  default spacing - that spacing is what would otherwise leave a visible
+  gap between cards even with hide_border=true set.
 
-  COLOR BLEND: bg_color=90,1a1b27,283457 sets a diagonal gradient (90 degree
-  angle) from dark navy (1a1b27) into a slightly lighter blue-purple
-  (283457). The SAME gradient is applied to all three cards using the SAME
-  three numbers/colors, which is what makes them look like one continuous
-  background instead of three different-colored boxes sitting side by side.
+  SEAMLESS BLEND: hide_border=true removes each card's own outline, so
+  there's no boxed look. To make the three cards flow into ONE continuous
+  gradient instead of three separate-colored blocks stacked up, the END
+  color of each card matches the START color of the NEXT card:
+    - Stats card:       1a1b27 -> 1a1b27 (flat navy, matches what follows)
+    - Top Languages:     1a1b27 -> 283457 (transitions from navy to blue-purple)
+    - Streak card:       283457 -> 283457 (flat blue-purple, continues from above)
+  This is what makes the seam between cards invisible - each card "picks up"
+  visually where the previous one left off, rather than restarting its own
+  separate gradient from scratch.
 
-  If you want a different color blend, change 1a1b27 and 283457 to two hex
-  colors of your choice - but change them IN ALL THREE image links at once,
-  or the blend will look mismatched again. You can preview hex colors at
-  https://htmlcolorcodes.com before swapping them in.
+  If you want a different color scheme, you need to update the matching
+  hex codes in the SAME pattern across all three image links, or the
+  seamless effect will break and you'll see a visible color jump again.
+  You can preview hex colors at https://htmlcolorcodes.com.
 
   Note: the Streak Stats card uses "background=" instead of "bg_color=" in
   its URL - that's not a typo, the streak-stats service just uses a
   different parameter name than github-readme-stats does, even though they
   do the same thing.
-
-  LAYOUT: This uses an HTML table to match the 2-box-top, 1-box-bottom
-  layout you sketched. Top row = Stats card + Top Languages card side by
-  side, each taking up exactly half the width (width="50%" on each <td>).
-  Bottom row = Streak stats, stretched across the FULL width using
-  colspan="2" (this tells the table "let this cell take up both columns
-  instead of just one").
-
-  Each image has width="100%" so it stretches to fill whatever space its
-  table cell gives it, rather than staying at its natural fixed size. This
-  is what makes the boxes match your sketch's proportions instead of
-  floating at their default sizes.
-
-  On a narrow screen (like viewing your profile on a phone), GitHub may
-  still shrink the table responsively, but the 2-top/1-bottom structure
-  itself will hold - it won't reflow into 3 stacked rows.
 -->
 
 <!--
