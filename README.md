@@ -1,11 +1,11 @@
 <h1 align="center">Hi, I'm Leletu Kamana 👋</h1>
 
 <p align="center">
-  1st Year Software Development Student @ IIE Rosebank International University-College, Nelson Mandela Bay Campus, South Africa
+  1st Year Software Development Student @ IIE Rosebank International University-College, South Africa
 </p>
 
 <p align="center">
-  📍 Port Elizabeth, South Africa
+  📍 Nelson Mandela Bay Campus, Port Elizabeth, South Africa
 </p>
 
 ---
@@ -49,56 +49,58 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
 
 ### 📊 GitHub Stats
 
-<table align="center" width="100%" cellspacing="0" cellpadding="0">
+<table align="center" width="100%" cellspacing="0" cellpadding="0" bgcolor="#1a1b27">
   <tr>
-    <td align="center" style="padding:0; margin:0;">
-      <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true&bg_color=90,1a1b27,1a1b27" alt="Leletu's GitHub stats" width="100%" />
+    <td align="center" bgcolor="#1a1b27">
+      <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1b27" alt="Leletu's GitHub stats" width="100%" />
     </td>
   </tr>
   <tr>
-    <td align="center" style="padding:0; margin:0;">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leletu-kamana&layout=compact&theme=tokyonight&hide_border=true&bg_color=90,1a1b27,283457" alt="Top languages" width="100%" />
+    <td align="center" bgcolor="#222a44">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leletu-kamana&layout=compact&theme=tokyonight&hide_border=true&bg_color=222a44&card_width=495" alt="Top languages" width="100%" />
     </td>
   </tr>
   <tr>
-    <td align="center" style="padding:0; margin:0;">
-      <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true&background=90,283457,283457" alt="GitHub streak stats" width="100%" />
+    <td align="center" bgcolor="#283457">
+      <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true&background=283457" alt="GitHub streak stats" width="100%" />
     </td>
   </tr>
 </table>
-
 <!--
   NOTES FOR LELETU (delete this comment block once you're happy with the README):
 
-  LAYOUT: All three cards are now stacked in a single column (one <tr> table
-  row per card, each holding just one <td>), top to bottom: Stats, Top
-  Languages, then Streak. cellspacing="0" and cellpadding="0" on the
-  <table>, plus padding:0/margin:0 on each <td>, remove the table's own
-  default spacing - that spacing is what would otherwise leave a visible
-  gap between cards even with hide_border=true set.
+  IMPORTANT TECHNICAL NOTE: GitHub strips inline CSS style="" attributes
+  from README files for security reasons (it sanitizes HTML before
+  displaying it). Because of this, this version uses the older bgcolor=""
+  HTML attribute instead of style="background:...", since bgcolor IS
+  allowed through GitHub's sanitizer on table cells. This is the actual
+  reason the table looks like a real spreadsheet-style grid with visible
+  cell lines (cellspacing/cellpadding/border are also old-style HTML
+  attributes that survive GitHub's sanitizer, unlike modern CSS).
 
-  SEAMLESS BLEND: hide_border=true removes each card's own outline, so
-  there's no boxed look. To make the three cards flow into ONE continuous
-  gradient instead of three separate-colored blocks stacked up, the END
-  color of each card matches the START color of the NEXT card:
-    - Stats card:       1a1b27 -> 1a1b27 (flat navy, matches what follows)
-    - Top Languages:     1a1b27 -> 283457 (transitions from navy to blue-purple)
-    - Streak card:       283457 -> 283457 (flat blue-purple, continues from above)
-  This is what makes the seam between cards invisible - each card "picks up"
-  visually where the previous one left off, rather than restarting its own
-  separate gradient from scratch.
+  HOW THE BLEND WORKS NOW: each table cell's bgcolor goes navy -> slightly
+  lighter navy-blue -> blue-purple, getting gradually lighter top to bottom.
+  Each card's OWN bg_color is set to match its cell's bgcolor exactly, so
+  the card blends into its own row with no visible seam INSIDE that row.
+  Between rows, the three different bgcolor steps create a smooth-ish
+  transition top to bottom, though it will look like 3 distinct color
+  bands rather than one perfectly smooth gradient, since true CSS
+  gradients aren't available here - this is the closest visual
+  approximation GitHub's sanitizer allows.
 
-  If you want a different color scheme, you need to update the matching
-  hex codes in the SAME pattern across all three image links, or the
-  seamless effect will break and you'll see a visible color jump again.
-  You can preview hex colors at https://htmlcolorcodes.com.
+  WIDTH MATCHING: card_width=495 keeps the Top Languages row the same width
+  as the Stats card's natural ~500px width, so the grid's vertical edges
+  line up evenly between rows.
+
+  If you want different colors, change the three hex codes (1a1b27, 222a44,
+  283457) - just keep each card's own bg_color/background matching its own
+  row's bgcolor, in both places (the <td bgcolor=...> AND the image URL).
 
   Note: the Streak Stats card uses "background=" instead of "bg_color=" in
   its URL - that's not a typo, the streak-stats service just uses a
   different parameter name than github-readme-stats does, even though they
   do the same thing.
 -->
-
 <!--
   NOTES FOR LELETU (delete this comment block once you're happy with the README):
 
@@ -112,10 +114,9 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
      Refreshing your profile page after a minute usually fixes it.
 
   3. theme=tokyonight is just one style option. Other options include: dark,
-     radical, merko, gruvbox, dracula, default (light). You can swap the word
-     "tokyonight" in any of the 3 image links above to try a different look.
-     If you change the theme, the gradient colors above may clash with it -
-     you'd want to pick new hex colors that match the new theme's palette.
+     radical, merko, gruvbox, dracula, default (light). If you change the
+     theme, the bgcolor values above may clash with it - you'd want to pick
+     new hex colors that match the new theme's palette.
 
   4. Streak stats are calculated from PUBLIC contributions only, unless you
      turn on "Private contributions" from your profile's contribution graph
