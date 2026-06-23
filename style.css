@@ -53,9 +53,20 @@ body {
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
+.social-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
 .social-icon:hover {
   color: #22d3ee;
   transform: translateY(-3px);
+}
+
+/* Mobile hamburger menu icon - same fixed-size fix as above */
+#mobile-menu-btn svg {
+  width: 26px;
+  height: 26px;
 }
 
 /* ===========================================
