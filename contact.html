@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact | [YOUR NAME]</title>
+  <meta name="description" content="Get in touch with [YOUR NAME]" />
+
+  <link rel="icon" href="favicon.ico" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-100">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="font-bold text-cyan-400 text-lg">[YOUR NAME]</a>
+
+      <div class="hidden md:flex gap-8 text-sm text-slate-300">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About &amp; Skills</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-cyan-400">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden flex-col bg-slate-900 border-t border-slate-800 px-6 py-4 gap-4 flex">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About &amp; Skills</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section class="max-w-2xl mx-auto px-6 pt-32 pb-24 fade-in">
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-4">Get In Touch</h1>
+    <p class="text-slate-400 text-center mb-10">
+      Have a question or want to collaborate? Send me a message.
+    </p>
+
+    <!--
+      FORM NOTE: This uses Formspree, a free form backend for static sites.
+      1. Go to https://formspree.io and sign up free
+      2. Create a new form, copy the endpoint it gives you
+      3. Replace YOUR-FORM-ID below with that endpoint ID
+      Until you do that, the form will not actually send anywhere.
+    -->
+    <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST" class="space-y-4">
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        class="input-field"
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        class="input-field"
+      />
+
+      <textarea
+        name="message"
+        rows="5"
+        placeholder="Your Message"
+        required
+        class="input-field"
+      ></textarea>
+
+      <button type="submit" class="w-full btn-primary">
+        Send Message
+      </button>
+
+    </form>
+
+    <p class="text-center text-slate-500 mt-6 text-sm">
+      Or email me directly at
+      <a href="mailto:[YOUR STUDENT EMAIL]" class="text-cyan-400 hover:underline">[YOUR STUDENT EMAIL]</a>
+    </p>
+
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="text-center py-8 border-t border-slate-800 text-slate-500 text-sm">
+    © <span id="year"></span> [YOUR NAME] • Built with HTML + Tailwind + JavaScript
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
