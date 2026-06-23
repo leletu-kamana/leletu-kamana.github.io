@@ -1,7 +1,7 @@
 <h1 align="center">Hi, I'm Leletu Kamana 👋</h1>
 
 <p align="center">
-  1st Year Software Development Student @ IIE Rosebank International University-College, Nelson Mandela Bay, South Africa
+  1st Year Software Development Student @ IIE Rosebank International University-College, Nelson Mandela Bay Campus, South Africa
 </p>
 
 <p align="center">
@@ -52,21 +52,40 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
 <table align="center" width="100%">
   <tr>
     <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true" alt="Leletu's GitHub stats" width="100%" />
+      <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true&bg_color=90,1a1b27,283457" alt="Leletu's GitHub stats" width="100%" />
     </td>
     <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leletu-kamana&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" width="100%" />
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leletu-kamana&layout=compact&theme=tokyonight&hide_border=true&bg_color=90,1a1b27,283457" alt="Top languages" width="100%" />
     </td>
   </tr>
   <tr>
     <td colspan="2" align="center">
-      <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true" alt="GitHub streak stats" width="100%" />
+      <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true&background=90,1a1b27,283457" alt="GitHub streak stats" width="100%" />
     </td>
   </tr>
 </table>
 
 <!--
   NOTES FOR LELETU (delete this comment block once you're happy with the README):
+
+  BORDERS: hide_border=true (already on all three cards) removes each card's
+  outline, so the eye doesn't see 3 separate boxes - just the content.
+
+  COLOR BLEND: bg_color=90,1a1b27,283457 sets a diagonal gradient (90 degree
+  angle) from dark navy (1a1b27) into a slightly lighter blue-purple
+  (283457). The SAME gradient is applied to all three cards using the SAME
+  three numbers/colors, which is what makes them look like one continuous
+  background instead of three different-colored boxes sitting side by side.
+
+  If you want a different color blend, change 1a1b27 and 283457 to two hex
+  colors of your choice - but change them IN ALL THREE image links at once,
+  or the blend will look mismatched again. You can preview hex colors at
+  https://htmlcolorcodes.com before swapping them in.
+
+  Note: the Streak Stats card uses "background=" instead of "bg_color=" in
+  its URL - that's not a typo, the streak-stats service just uses a
+  different parameter name than github-readme-stats does, even though they
+  do the same thing.
 
   LAYOUT: This uses an HTML table to match the 2-box-top, 1-box-bottom
   layout you sketched. Top row = Stats card + Top Languages card side by
@@ -100,8 +119,16 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
   3. theme=tokyonight is just one style option. Other options include: dark,
      radical, merko, gruvbox, dracula, default (light). You can swap the word
      "tokyonight" in any of the 3 image links above to try a different look.
+     If you change the theme, the gradient colors above may clash with it -
+     you'd want to pick new hex colors that match the new theme's palette.
 
   4. Streak stats are calculated from PUBLIC contributions only, unless you
      turn on "Private contributions" from your profile's contribution graph
      dropdown (this is optional, not required).
+
+  5. These stats auto-update on their own - no action needed. The Stats
+     card refreshes roughly every 24 hours, and the Top Languages card
+     roughly every 6 days, since the free service caches results to avoid
+     overload. A brand new commit may take that long to show up - this is
+     normal, not a bug.
 -->
