@@ -49,46 +49,53 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
 
 ### 📊 GitHub Stats
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1b27" alt="Leletu's GitHub stats" width="100%" />
-</div>
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leletu-kamana&layout=compact&theme=tokyonight&hide_border=true&bg_color=222a44&card_width=495" alt="Top languages" width="100%" />
-</div>
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true&background=283457" alt="GitHub streak stats" width="100%" />
-</div>
+<table width="100%">
+  <tr>
+    <td bgcolor="#1a1b27">
+      <img src="https://github-readme-stats.vercel.app/api?username=leletu-kamana&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1b27" alt="Leletu's GitHub stats" width="100%" />
+    </td>
+    <td width="50%" align="center" rowspan="2" bgcolor="#283457">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=leletu-kamana&layout=compact&theme=tokyonight&hide_border=true&bg_color=283457" alt="Top languages" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://streak-stats.demolab.com?user=leletu-kamana&theme=tokyonight&hide_border=true&background=222a44" alt="GitHub streak stats" width="100%" />
+    </td>
+  </tr>
+</table>
 <!--
   NOTES FOR LELETU (delete this comment block once you're happy with the README):
 
-  WHY <div> AND NOT <aside> / <section>: GitHub's README sanitizer only
-  keeps a specific older set of HTML tags and silently DELETES anything
-  outside that list - <div> survives, but <aside> and <section> (newer
-  HTML5 "semantic" tags) do not. Using them would have meant your three
-  blocks either lost their wrapper entirely or behaved unpredictably. <div>
-  is the closest tag GitHub actually allows that does the same "generic
-  container" job <aside>/<section> would have done.
+  LAYOUT: This matches your sketch's exact shape using a table with
+  rowspan. Top-left cell = Stats card. Bottom-left cell = Streak card.
+  Right cell = Top Languages card, with rowspan="2" so it stretches down
+  to fill BOTH rows of height on the right side, just like the tall
+  "Aside" box in your sketch.
 
-  STRUCTURE: Each card now lives in its own separate <div align="center">
-  block, one per row, top to bottom: Stats, Top Languages, Streak. This
-  gives you 3 distinct, separated sections in the markdown source, even
-  though visually they'll still sit close together on the rendered page
-  (GitHub adds a little default spacing between block-level elements like
-  div automatically - there's no way to set that spacing to exactly zero
-  using only tags GitHub allows, since the spacing comes from GitHub's own
-  stylesheet, not from anything in this file).
+  WHY <table> AND NOT <section>/<aside>/<article>: GitHub's README
+  sanitizer deletes those three tags entirely - they're newer HTML5
+  "semantic" elements outside the older tag set GitHub actually keeps.
+  <table>, <tr>, and <td> ARE on GitHub's allowed list, and table is the
+  only one of those that supports rowspan, which is required to make one
+  box visually taller than the other two - so it's the correct tool to
+  recreate this exact grid shape, not a workaround.
 
-  COLOR BLEND: since <div> doesn't support a bgcolor attribute (that's a
-  table-only legacy attribute), the color blend instead comes entirely from
-  each card's OWN bg_color/background URL parameter: navy (1a1b27) ->
-  navy-blue (222a44) -> blue-purple (283457), in that order top to bottom.
+  COLOR BLEND: each cell uses bgcolor (an old HTML attribute GitHub keeps,
+  unlike style="background:...” which gets stripped), and each card's own
+  bg_color/background parameter is set to match its own cell exactly, so
+  there's no seam between a cell and the image inside it. The three colors
+  step from dark navy (1a1b27) to mid navy-blue (222a44) to blue-purple
+  (283457), similar to the color progression in your reference sketch.
 
-  WIDTH MATCHING: card_width=495 keeps the Top Languages card the same
-  width as the Stats card's natural ~500px size, so all three divs line up
-  evenly instead of having mismatched widths.
+  GAPS BETWEEN BOXES: cellspacing="6" creates a small visible gap between
+  all the boxes (unlike the seamless versions before this one) - this
+  matches your sketch, which shows clear white space between Section,
+  Article, and Aside rather than them touching.
 
-  If you want different colors, change all three hex codes together so the
-  blend stays smooth - 1a1b27, 222a44, and 283457 each appear once.
+  If you want different colors, update bgcolor on the <td> AND the
+  matching bg_color/background on that same cell's image URL together, or
+  the card and its background will mismatch.
 
   Note: the Streak Stats card uses "background=" instead of "bg_color=" in
   its URL - that's not a typo, the streak-stats service just uses a
@@ -109,7 +116,7 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
 
   3. theme=tokyonight is just one style option. Other options include: dark,
      radical, merko, gruvbox, dracula, default (light). If you change the
-     theme, the bg_color/background values above may clash with it - you'd
+     theme, the bgcolor/bg_color values above may clash with it - you'd
      want to pick new hex colors that match the new theme's palette.
 
   4. Streak stats are calculated from PUBLIC contributions only, unless you
@@ -121,10 +128,11 @@ and I'm currently focused on strengthening my foundations in Java and JavaScript
      roughly every 6 days, since the free service caches results to avoid
      overload. A brand new commit may take that long to show up - this is
      normal, not a bug.
--->
-  5. These stats auto-update on their own - no action needed. The Stats
-     card refreshes roughly every 24 hours, and the Top Languages card
-     roughly every 6 days, since the free service caches results to avoid
-     overload. A brand new commit may take that long to show up - this is
-     normal, not a bug.
+
+  6. The Top Languages card's HEIGHT is generated automatically based on
+     how many languages you have - it won't necessarily perfectly match
+     the combined height of the Stats + Streak cards stacked on the left.
+     Minor height mismatch on the right side is a real visual limitation
+     of combining two independently-sized image services this way, not a
+     mistake in the code.
 -->
