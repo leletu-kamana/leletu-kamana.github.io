@@ -1,0 +1,12 @@
+# robots.txt
+# This file tells search engines (Google, Bing, etc.) which pages
+# on this site they're allowed to crawl. "User-agent: *" means
+# "this rule applies to all search engines." "Allow: /" means
+# "you can crawl everything on this site."
+
+User-agent: *
+Allow: /
+
+# This points search engines to the sitemap so they can discover
+# every page on the site rather than only the homepage.
+Sitemap: https://leletu-kamana.github.io/sitemap.xml
