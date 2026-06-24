@@ -58,6 +58,20 @@ body {
   height: 26px;
 }
 
+/* The brand icons (GitHub, LinkedIn, Facebook, Instagram) are now plain
+   <img> tags pointing at simpleicons.org, since Lucide removed all brand
+   logos in its 1.0 release. <img> tags can't be recolored with the CSS
+   "color" property the way text or inline SVG can, so this brightness
+   filter is what creates the hover effect for those four icons instead. */
+.social-icon img {
+  filter: brightness(0.85);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon:hover img {
+  filter: brightness(1.4);
+}
+
 .social-icon:hover {
   color: #22d3ee;
   transform: translateY(-3px);
