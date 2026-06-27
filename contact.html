@@ -32,6 +32,13 @@
   
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230f0f19' stroke='url(%23grad)' stroke-width='2'/%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300f3ff'/%3E%3Cstop offset='100%25' stop-color='%23bd00ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='5' cy='5' r='1.5' fill='%23ff5f56'/%3E%3Ccircle cx='9' cy='5' r='1.5' fill='%23ffbd2e'/%3E%3Ccircle cx='13' cy='5' r='1.5' fill='%2327c93f'/%3E%3Ctext x='4' y='22' fill='%2300f3ff' font-family='monospace' font-size='12' font-weight='bold'%3E&gt;%3C/text%3E%3Ctext x='12' y='22' fill='url(%23grad)' font-family='monospace' font-size='12' font-weight='bold'%3ELK%3C/text%3E%3C/svg%3E">
 
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    // Initialize with your Public Key from the EmailJS dashboard
+    emailjs.init({
+      publicKey: "YOUR_PUBLIC_KEY",
+    });
+  </script>
   
 </head>
 
@@ -110,38 +117,48 @@
       </header>
     </nav>
 
-  <!-- ============ CONTACT SECTION ============ -->
-  <section class="max-w-2xl mx-auto px-6 pt-32 pb-24 fade-in">
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="max-w-2xl mx-auto px-6 pt-32 pb-24 fade-in">
+
+      <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-4">Get In Touch</h1>
+      <p class="text-slate-400 text-center mb-10">
+        Have a question or want to collaborate? Send me a message.
+      </p>
+
+      <!--
+        FORM NOTE: This form uses a "mailto" action, which opens the
+        visitor's own email app (Outlook, Gmail desktop app, Mail, etc)
+        with the message pre-filled, instead of sending it directly
+        from the website.
+
+        This is the simplest option for a static GitHub Pages site with
+        no backend, but it has one real limitation worth knowing:
+        it ONLY works if the visitor has an email app installed and
+        configured on their device. On many phones/browsers it does
+        nothing visible if no mail app is set up - so for visitors
+        browsing on mobile without a mail app, this form may appear
+        "broken" even though the code is correct.
+
+        If you want messages to send directly without relying on the
+        visitor's own email app, Formspree (mentioned in earlier
+        versions of this file) is the more reliable alternative for
+        a static site - free for basic use, no backend needed either.
+      -->
+      <section class="max-w-2xl mx-auto px-6 pt-32 pb-24 fade-in">
 
     <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-4">Get In Touch</h1>
     <p class="text-slate-400 text-center mb-10">
       Have a question or want to collaborate? Send me a message.
     </p>
 
-    <!--
-      FORM NOTE: This form uses a "mailto" action, which opens the
-      visitor's own email app (Outlook, Gmail desktop app, Mail, etc)
-      with the message pre-filled, instead of sending it directly
-      from the website.
-
-      This is the simplest option for a static GitHub Pages site with
-      no backend, but it has one real limitation worth knowing:
-      it ONLY works if the visitor has an email app installed and
-      configured on their device. On many phones/browsers it does
-      nothing visible if no mail app is set up - so for visitors
-      browsing on mobile without a mail app, this form may appear
-      "broken" even though the code is correct.
-
-      If you want messages to send directly without relying on the
-      visitor's own email app, Formspree (mentioned in earlier
-      versions of this file) is the more reliable alternative for
-      a static site - free for basic use, no backend needed either.
-    -->
-    <form action="mailto:st10514888@rcconnect.edu.za" method="post" enctype="text/plain" class="space-y-4">
+    <form id="contact-form" class="space-y-4">
+      <!-- Honeypot anti-bot shield -->
+      <input type="text" id="honeypot" style="display:none" />
 
       <input
         type="text"
-        name="name"
+        id="user_name"
+        name="user_name"
         placeholder="Your Name"
         required
         class="input-field"
@@ -149,13 +166,15 @@
 
       <input
         type="email"
-        name="email"
+        id="user_email"
+        name="user_email"
         placeholder="Your Email"
         required
         class="input-field"
       />
 
       <textarea
+        id="user_message"
         name="message"
         rows="5"
         placeholder="Your Message"
@@ -163,18 +182,20 @@
         class="input-field"
       ></textarea>
 
-      <button type="submit" class="w-full btn-primary">
+      <button type="submit" id="submit-btn" class="w-full btn-primary">
         Send Message
       </button>
-
     </form>
+
+    <!-- Status Notifications Indicator -->
+    <p id="form-status" class="text-center mt-4 text-sm font-medium hidden"></p>
+
+  </section>
 
     <p class="text-center text-slate-500 mt-6 text-sm">
       Or email me directly at
       <a href="mailto:st10514888@rcconnect.edu.za" class="text-cyan-400 hover:underline">st10514888@rcconnect.edu.za</a>
     </p>
-
-  </section>
 
   <!-- ============ FOOTER ============ -->
   <footer class="text-center py-8 border-t border-slate-800 text-slate-500 text-sm">
