@@ -77,97 +77,20 @@ body {
   transform: translateY(-3px);
 }
 
-/* Mobile hamburger menu icon - same fixed-size fix as above */
 /* Custom Spring Animation Timing Engine Variables */
 :root {
   --ease-spring: cubic-bezier(0.68, -0.6, 0.32, 1.6);
   --glass-border: rgba(255, 255, 255, 0.08);
 }
 
-/* Glass Dock Main Layout Wrapper Container */
-.glass-menu-dock {
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background: rgba(15, 23, 42, 0.65); /* Slate background adjusted for dark UI consistency */
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.5);
-  padding: 6px;
-  border-radius: 99rem;
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  position: relative;
-}
-
-/* Internal Inner Light Glow Masking Layer */
-.glass-menu-dock::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.15);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Nav Anchors Inside the Dock */
-.nav-dock-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1 1 0;
-  min-width: 0;
-  color: #94a3b8; /* Tailwind slate-400 */
-  text-decoration: none;
-  padding: 8px 4px;
-  border-radius: 999rem;
-  -webkit-tap-highlight-color: transparent;
-  transition:
-    background 0.25s var(--ease-spring),
-    color 0.25s var(--ease-spring),
-    transform 0.25s var(--ease-spring);
-}
-
-/* Interactive Hover States */
-.nav-dock-item:hover {
-  background-color: rgba(34, 211, 238, 0.12); /* Subtle cyan tint overlay */
-  color: #22d3ee; /* Cyan-400 text response */
-  transform: translateY(-2px);
-}
-
-.nav-dock-item svg {
-  width: 1.35rem;
-  height: 1.35rem;
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.nav-dock-item:hover svg {
-  transform: scale(1.1);
-}
-
-.nav-dock-item span {
-  font-size: 0.72rem;
-  font-weight: 500;
-  line-height: 1;
-  margin-top: 5px;
-  letter-spacing: 0.025em;
-}
-
-/* Active Page Identifier Highlight Mode */
-.nav-dock-item.active {
-  background: rgba(34, 211, 238, 0.2);
-  color: #22d3ee;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1);
-}
-
-/* Click Compress Micro-Interaction */
-.nav-dock-item:active {
-  transform: scale(0.95);
-}
-
 /* ===========================================
-   Reusable buttons
+   Reusable buttons & Navigation Elements
    =========================================== */
+#mobile-menu-btn svg {
+  width: 26px;
+  height: 26px;
+}
+
 .btn-primary {
   display: inline-block;
   background: #22d3ee;
@@ -200,6 +123,149 @@ body {
   color: #22d3ee;
 }
 
+/* Glass Dock Main Layout Wrapper Container */
+.glass-menu-dock {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(15, 23, 42, 0.65); /* Adjusted slate alpha match for dark mode layout consistency */
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.5);
+  padding: 6px;
+  border-radius: 99rem;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+}
+
+/* Internal Inner Light Glow Masking Layer */
+.glass-menu-dock::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.15),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Nav Anchors Inside the Dock */
+.nav-dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+  color: #94a3b8; /* Tailwind slate-400 */
+  text-decoration: none;
+  padding: 8px 4px;
+  border-radius: 999rem;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background 0.25s var(--ease-spring),
+    color 0.25s var(--ease-spring),
+    transform 0.25s var(--ease-spring);
+}
+
+/* Interactive Hover States */
+.nav-dock-item:hover {
+  background-color: rgba(34, 211, 238, 0.12); /* Subtle cyan tint overlay */
+  color: #22d3ee; /* Cyan-400 text response */
+  transform: translateY(-2px) rotate(2.2deg);
+}
+
+.nav-dock-item svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-dock-item:hover svg {
+  transform: scale(1.1);
+}
+
+.nav-dock-item span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 5px;
+  letter-spacing: 0.025em;
+}
+
+/* Active Page Identifier Highlight Mode */
+.nav-dock-item.active {
+  background: rgba(34, 211, 238, 0.2);
+  color: #22d3ee;
+}
+
+/* Click Compress Micro-Interaction */
+.nav-dock-item:active {
+  transform: scale(0.95);
+}
+
+/* =========================================================
+   GLASS DESKTOP DOCK INTERACTION STRUCTURAL SYNTAX
+   ========================================================= */
+
+/* Main Full Width Desktop Glass Bar Row Frame Grid */
+.glass-desktop-dock {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(15, 23, 42, 0.65); /* Keeps strict system aesthetic consistency with slate dark palette */
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+  border-radius: 99rem;
+  position: relative;
+}
+
+/* Internal Inner Light Glow Masking Structural Overlay */
+.glass-desktop-dock::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.12),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Nav Item Anchors Shared Spring Curves Styling Configuration */
+.nav-desk-item {
+  display: inline-block;
+  color: #94a3b8; /* Tailwind slate-400 core text code */
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 999rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  transition:
+    background 0.25s var(--ease-spring),
+    color 0.25s var(--ease-spring),
+    transform 0.25s var(--ease-spring);
+}
+
+/* Hover Physics Micro-Animations Tracking State Modifications */
+.nav-desk-item:hover {
+  background-color: rgba(34, 211, 238, 0.12); /* Cyan tinted backplate bloom drop */
+  color: #22d3ee; /* Switches typography explicitly to cyan-400 */
+  transform: translateY(-1px) rotate(1.5deg); /* Scaled corporate structural signature shift */
+}
+
+/* Active Highlight Filter Pipeline */
+.nav-desk-item.active {
+  background: rgba(34, 211, 238, 0.2);
+  color: #22d3ee;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+/* Click Compress Response Matrix Trigger */
+.nav-desk-item:active {
+  transform: scale(0.97);
+}
 /* ===========================================
    About / Skills cards
    =========================================== */
