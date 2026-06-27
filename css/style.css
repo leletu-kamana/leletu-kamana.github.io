@@ -417,3 +417,145 @@ body {
 .input-field::placeholder {
   color: #64748b;
 }
+
+.dropdown {
+  border: 1px solid #1e293b; /* slate-800 */
+  border-radius: 12px;
+  transition: all 300ms;
+  display: flex;
+  flex-direction: column;
+  min-height: 58px;
+  background-color: rgba(15, 23, 42, 0.3); /* Translucent background tint */
+  overflow: hidden;
+  position: relative;
+  inset-inline: auto;
+  max-width: 600px; /* Expanded slightly to provide a more readable line length for paragraph structures */
+  width: 100%;
+}
+.dropdown input:where(:checked) ~ .list {
+  opacity: 1;
+  transform: translateY(-3rem) scale(1);
+  transition: all 500ms ease;
+  margin-top: 32px;
+  padding-top: 4px;
+  margin-bottom: -32px;
+}
+.dropdown input:where(:not(:checked)) ~ .list {
+  opacity: 0;
+  transform: translateY(3rem);
+  margin-top: -100%;
+  user-select: none;
+  height: 0px;
+  max-height: 0px;
+  min-height: 0px;
+  pointer-events: none;
+  transition: all 500ms ease-out;
+}
+.trigger {
+  cursor: pointer;
+  list-style: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-weight: 600;
+  color: #f1f5f9; /* slate-100 */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-flow: row;
+  gap: 1rem;
+  padding: 1rem;
+  height: max-content;
+  position: relative;
+  z-index: 40;
+  border-radius: inherit;
+  background-color: rgba(15, 23, 42, 0.6);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.dropdown input:where(:checked) + .trigger {
+  margin-bottom: 1rem;
+}
+.dropdown input:where(:checked) + .trigger:before {
+  rotate: 90deg;
+  transition-delay: 0ms;
+}
+.dropdown input:where(:checked) + .trigger::after {
+  content: "Close Bio Timeline";
+}
+
+.trigger:before,
+.trigger::after {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.trigger:before {
+  content: "›";
+  rotate: -90deg;
+  width: 17px;
+  height: 17px;
+  color: #22d3ee; /* cyan-400 brand color */
+  border-radius: 2px;
+  font-size: 26px;
+  transition: all 350ms ease;
+  transition-delay: 85ms;
+}
+.trigger::after {
+  content: "Open Full Bio Timeline";
+}
+.list {
+  height: 100%;
+  max-height: 28rem; /* Tall target metric for text lists */
+  width: calc(100% - calc(var(--w-scrollbar) / 2));
+  display: grid;
+  grid-auto-flow: row;
+  overflow: hidden auto;
+  gap: 1.25rem;
+  padding: 0 1rem;
+  margin-right: -8px;
+  --w-scrollbar: 6px;
+}
+.listitem {
+  height: 100%;
+  width: calc(100% + calc(calc(var(--w-scrollbar) / 2) + var(--w-scrollbar)));
+  list-style: none;
+}
+.article {
+  padding: 1.25rem;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.625;
+  text-align: justify;
+  width: 100%;
+  border: 1px solid #1e293b;
+  display: inline-block;
+  background-color: rgba(30, 41, 59, 0.2);
+}
+
+.webkit-scrollbar::-webkit-scrollbar {
+  width: var(--w-scrollbar);
+  height: var(--w-scrollbar);
+  border-radius: 9999px;
+}
+.webkit-scrollbar::-webkit-scrollbar-track {
+  background: #0000;
+}
+.webkit-scrollbar::-webkit-scrollbar-thumb {
+  background: #0000;
+  border-radius: 9999px;
+}
+.webkit-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #334155;
+}
