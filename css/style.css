@@ -124,12 +124,14 @@ body {
 }
 
 /* Glass Dock Main Layout Wrapper Container */
+/* Glass Dock Main Layout Wrapper Container */
 .glass-menu-dock {
+  width: 100%;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background: rgba(15, 23, 42, 0.65); /* Adjusted slate alpha match for dark mode layout consistency */
+  background: rgba(15, 23, 42, 0.85); /* Slightly boosted background opacity for clear text visibility over elements */
   border: 1px solid var(--glass-border);
-  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.6);
   padding: 6px;
   border-radius: 99rem;
   display: flex;
