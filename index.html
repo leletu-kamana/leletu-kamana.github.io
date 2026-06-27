@@ -99,13 +99,14 @@
       </header>
     </nav>
 
-    <nav class="md:hidden fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[520px] z-50">
+    <!-- Top Floating Glass Mobile Bar (Mirrors Desktop Layout using Mobile glass-menu syntax) -->
+    <nav class="md:hidden fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-24px)] max-w-[520px] z-50">
       <header class="w-full">
-        <!-- Replaced glass-menu-dock with glass-desktop-dock syntax for perfect visual consistency -->
-        <div class="glass-desktop-dock px-4 py-3 flex justify-between items-center">
+        <!-- Re-applied your core glass-menu-dock structure for authentic theme consistency -->
+        <div class="glass-menu-dock px-3.5 py-2.5 flex justify-between items-center">
           
           <!-- Logo Element Group -->
-          <a href="index.html" class="flex items-center hover:opacity-90 transition-opacity transform scale-90 origin-left">
+          <a href="index.html" class="flex items-center hover:opacity-90 transition-opacity transform scale-95 origin-left shrink-0">
             <svg viewBox="0 0 170 32" width="170" height="32" role="img" aria-label="Leletu Kamana logo">
               <rect x="2" y="3" width="40" height="26" rx="5" fill="none" stroke="#334155" stroke-width="1.8" />
               <text x="8" y="20" font-family="Courier New, monospace" font-size="13" font-weight="700" fill="#22d3ee">&gt;</text>
@@ -113,13 +114,13 @@
               <rect x="33" y="11" width="4" height="9" fill="#22d3ee">
                 <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite" />
               </rect>
-              <!-- Hidden name tracking string on small screens to prevent micro-cluttering next to links -->
-              <text x="50" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#22d3ee" class="hidden xs:block">Leletu Kamana</text>
+              <!-- Text hides on extra narrow screens below 390px to prevent link overlapping -->
+              <text x="50" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#22d3ee" class="hidden [media(min-width:390px)]:block">Leletu Kamana</text>
             </svg>
           </a>
 
-          <!-- Layout Text Links Engine Links (Uses desktop padding classes for proper finger-tap scaling) -->
-          <div class="flex gap-1 text-[11px] sm:text-xs">
+          <!-- Navigation Text Links (Uses your active spring curves and styling classes) -->
+          <div class="flex gap-0.5 text-[11px] sm:text-xs font-medium tracking-tight whitespace-nowrap">
             <a href="index.html" class="nav-desk-item !px-2.5 !py-1.5 ${window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ? 'active' : ''}">
               <span>Home</span>
             </a>
