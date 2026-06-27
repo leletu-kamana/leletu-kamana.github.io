@@ -245,3 +245,39 @@ document.addEventListener("DOMContentLoaded", function () {
   setupScrollAnimations();
   setFooterYear();
 });
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const statusText = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+
+  // Security Check: If a spam bot filled out our hidden honeypot field, block it silently
+  if (document.getElementById('honeypot').value !== "") {
+    console.warn("Spam bot detected.");
+    return;
+  }
+
+  // Visual feedback for the user
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Sending Message...";
+  statusText.classList.remove('hidden', 'text-green-400', 'text-red-400');
+  statusText.innerText = "";
+
+  // Securely routes data through the EmailJS proxy gateway without revealing emails in code
+  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+    .then(() => {
+      statusText.innerText = "✓ Message sent directly to Leletu!";
+      statusText.classList.add('text-green-400');
+      this.reset(); // Clear input fields completely
+    })
+    .catch((error) => {
+      console.error('Failed to send...', error);
+      statusText.innerText = "✕ Delivery failed. Please try again or check your network connection.";
+      statusText.classList.add('text-red-400');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Send Message";
+    });
+});
