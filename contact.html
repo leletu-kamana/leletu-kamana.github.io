@@ -38,43 +38,46 @@
 <body class="bg-slate-950 text-slate-100">
 
   <!-- ============ NAVBAR ============ -->
-  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800 z-50">
-    <header class="w-full fixed top-0 left-0 z-50 px-6 py-4 hidden md:block">
-      <div class="max-w-6xl mx-auto glass-desktop-dock px-8 py-3 flex justify-between items-center">
-        
-        <a href="index.html" class="flex items-center hover:opacity-90 transition-opacity">
-          <svg viewBox="0 0 170 32" width="170" height="32" role="img" aria-label="Leletu Kamana logo">
-            <rect x="2" y="3" width="40" height="26" rx="5" fill="none" stroke="#334155" stroke-width="1.8" />
-            <text x="8" y="20" font-family="Courier New, monospace" font-size="13" font-weight="700" fill="#22d3ee">&gt;</text>
-            <text x="17" y="20" font-family="Courier New, monospace" font-size="13" font-weight="700" fill="#f1f5f9">LK</text>
-            <rect x="33" y="11" width="4" height="9" fill="#22d3ee">
-              <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite" />
-            </rect>
-            <text x="50" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#22d3ee">Leletu Kamana</text>
-          </svg>
-        </a>
+      <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-6xl z-50 md:block hidden">
+      <header class="w-full">
+        <div class="glass-desktop-dock px-8 py-3 flex justify-between items-center">
+          
+          <a href="index.html" class="flex items-center hover:opacity-90 transition-opacity">
+            <svg viewBox="0 0 170 32" width="170" height="32" role="img" aria-label="Leletu Kamana logo">
+              <rect x="2" y="3" width="40" height="26" rx="5" fill="none" stroke="#334155" stroke-width="1.8" />
+              <text x="8" y="20" font-family="Courier New, monospace" font-size="13" font-weight="700" fill="#22d3ee">&gt;</text>
+              <text x="17" y="20" font-family="Courier New, monospace" font-size="13" font-weight="700" fill="#f1f5f9">LK</text>
+              <rect x="33" y="11" width="4" height="9" fill="#22d3ee">
+                <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite" />
+              </rect>
+              <text x="50" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#22d3ee">Leletu Kamana</text>
+            </svg>
+          </a>
 
-        <div class="flex gap-2 text-sm">
-          <a href="index.html" class="nav-desk-item ${window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ? 'active' : ''}">
-            <span>Home</span>
-          </a>
-          <a href="about.html" class="nav-desk-item ${window.location.pathname.endsWith('about.html') ? 'active' : ''}">
-            <span>About &amp; Skills</span>
-          </a>
-          <a href="projects.html" class="nav-desk-item ${window.location.pathname.endsWith('projects.html') ? 'active' : ''}">
-            <span>Projects</span>
-          </a>
-          <a href="contact.html" class="nav-desk-item ${window.location.pathname.endsWith('contact.html') ? 'active' : ''}">
-            <span>Contact</span>
-          </a>
+          <div class="flex gap-2 text-sm">
+            <a href="index.html" class="nav-desk-item ${window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ? 'active' : ''}">
+              <span>Home</span>
+            </a>
+            <a href="about.html" class="nav-desk-item ${window.location.pathname.endsWith('about.html') ? 'active' : ''}">
+              <span>About &amp; Skills</span>
+            </a>
+            <a href="projects.html" class="nav-desk-item ${window.location.pathname.endsWith('projects.html') ? 'active' : ''}">
+              <span>Projects</span>
+            </a>
+            <a href="contact.html" class="nav-desk-item ${window.location.pathname.endsWith('contact.html') ? 'active' : ''}">
+              <span>Contact</span>
+            </a>
+          </div>
+
         </div>
+      </header>
+    </nav>
 
-      </div>
-    </header>
+    <!-- REMOVED: The spacer buffer div is removed entirely so your content naturally flows up beneath the floating bars -->
 
-    <div class="hidden md:block h-20"></div>
-
-     <div class="glass-menu-dock w-full">
+    <!-- Independent Floating Glass Mobile Dock (Fixed bottom placement over layout content, purely visible on mobile viewports) -->
+    <div class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[520px] z-50">
+      <div class="glass-menu-dock w-full">
         <a href="index.html" class="nav-dock-item ${window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ? 'active' : ''}">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"></path>
@@ -105,7 +108,6 @@
         </a>
       </div>
     </div>
-  </nav>
 
   <!-- ============ CONTACT SECTION ============ -->
   <section class="max-w-2xl mx-auto px-6 pt-32 pb-24 fade-in">
