@@ -72,38 +72,35 @@
       </header>
     </nav>
     
-        <nav class="md:hidden fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-24px)] max-w-[520px] z-50">
+    <nav class="md:hidden fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-24px)] max-w-[520px] z-50">
       <header class="w-full">
-        <!-- Re-applied your core glass-menu-dock structure for authentic theme consistency -->
-        <div class="glass-menu-dock px-3.5 py-2.5 flex justify-between items-center">
+        <div class="glass-menu-dock px-3.5 py-2 flex justify-between items-center gap-2">
           
-          <!-- Logo Element Group -->
-          <a href="index.html" class="flex items-center hover:opacity-90 transition-opacity transform scale-95 origin-left shrink-0">
-            <svg viewBox="0 0 170 32" width="170" height="32" role="img" aria-label="Leletu Kamana logo">
+          <!-- Compact Mobile Logo Group (Narrowed viewBox limits to prevent pushing links off-screen) -->
+          <a href="index.html" class="flex items-center hover:opacity-90 transition-opacity shrink-0">
+            <svg viewBox="0 0 44 32" width="44" height="32" role="img" aria-label="Leletu Kamana logo">
               <rect x="2" y="3" width="40" height="26" rx="5" fill="none" stroke="#334155" stroke-width="1.8" />
               <text x="8" y="20" font-family="Courier New, monospace" font-size="13" font-weight="700" fill="#22d3ee">&gt;</text>
               <text x="17" y="20" font-family="Courier New, monospace" font-size="13" font-weight="700" fill="#f1f5f9">LK</text>
               <rect x="33" y="11" width="4" height="9" fill="#22d3ee">
                 <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite" />
               </rect>
-              <!-- Text hides on extra narrow screens below 390px to prevent link overlapping -->
-              <text x="50" y="20" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#22d3ee" class="hidden [media(min-width:390px)]:block">Leletu Kamana</text>
             </svg>
           </a>
 
-          <!-- Navigation Text Links (Uses your active spring curves and styling classes) -->
-          <div class="flex gap-0.5 text-[11px] sm:text-xs font-medium tracking-tight whitespace-nowrap">
-            <a href="index.html" class="nav-desk-item !px-2.5 !py-1.5 ${window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ? 'active' : ''}">
-              <span>Home</span>
+          <!-- Navigation Track Wrapper (Optimized distribution structure using flex-1) -->
+          <div class="flex flex-1 justify-end items-center gap-1 text-[11px] sm:text-xs font-semibold tracking-tight whitespace-nowrap">
+            <a href="index.html" class="nav-dock-item !flex !flex-row !items-center !justify-center !p-2 ${window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ? 'active' : ''}">
+              <span class="!mt-0">Home</span>
             </a>
-            <a href="about.html" class="nav-desk-item !px-2.5 !py-1.5 ${window.location.pathname.endsWith('about.html') ? 'active' : ''}">
-              <span>About</span>
+            <a href="about.html" class="nav-dock-item !flex !flex-row !items-center !justify-center !p-2 ${window.location.pathname.endsWith('about.html') ? 'active' : ''}">
+              <span class="!mt-0">About</span>
             </a>
-            <a href="projects.html" class="nav-desk-item !px-2.5 !py-1.5 ${window.location.pathname.endsWith('projects.html') ? 'active' : ''}">
-              <span>Projects</span>
+            <a href="projects.html" class="nav-dock-item !flex !flex-row !items-center !justify-center !p-2 ${window.location.pathname.endsWith('projects.html') ? 'active' : ''}">
+              <span class="!mt-0">Projects</span>
             </a>
-            <a href="contact.html" class="nav-desk-item !px-2.5 !py-1.5 ${window.location.pathname.endsWith('contact.html') ? 'active' : ''}">
-              <span>Contact</span>
+            <a href="contact.html" class="nav-dock-item !flex !flex-row !items-center !justify-center !p-2 ${window.location.pathname.endsWith('contact.html') ? 'active' : ''}">
+              <span class="!mt-0">Contact</span>
             </a>
           </div>
 
