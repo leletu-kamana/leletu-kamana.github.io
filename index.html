@@ -29,7 +29,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Our custom styles (shared by every page) -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="src/css/style.css" />
 
   <!-- Lucide icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -84,13 +84,13 @@
             <a href="index.html" class="nav-desk-item ${window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ? 'active' : ''}">
               <span>Home</span>
             </a>
-            <a href="about.html" class="nav-desk-item ${window.location.pathname.endsWith('about.html') ? 'active' : ''}">
+            <a href="about/about.html" class="nav-desk-item ${window.location.pathname.endsWith('about.html') ? 'active' : ''}">
               <span>About &amp; Skills</span>
             </a>
-            <a href="projects.html" class="nav-desk-item ${window.location.pathname.endsWith('projects.html') ? 'active' : ''}">
+            <a href="projects/projects.html" class="nav-desk-item ${window.location.pathname.endsWith('projects.html') ? 'active' : ''}">
               <span>Projects</span>
             </a>
-            <a href="contact.html" class="nav-desk-item ${window.location.pathname.endsWith('contact.html') ? 'active' : ''}">
+            <a href="contact/contact.html" class="nav-desk-item ${window.location.pathname.endsWith('contact.html') ? 'active' : ''}">
               <span>Contact</span>
             </a>
           </div>
@@ -121,13 +121,13 @@
             <a href="index.html" class="nav-dock-item !flex !flex-row !items-center !justify-center !p-2 ${window.location.pathname.endsWith('index.html') || window.location.pathname === '/' ? 'active' : ''}">
               <span class="!mt-0">Home</span>
             </a>
-            <a href="about.html" class="nav-dock-item !flex !flex-row !items-center !justify-center !p-2 ${window.location.pathname.endsWith('about.html') ? 'active' : ''}">
+            <a href="about/about.html" class="nav-dock-item !flex !flex-row !items-center !justify-center !p-2 ${window.location.pathname.endsWith('about.html') ? 'active' : ''}">
               <span class="!mt-0">About</span>
             </a>
-            <a href="projects.html" class="nav-dock-item !flex !flex-row !items-center !justify-center !p-2 ${window.location.pathname.endsWith('projects.html') ? 'active' : ''}">
+            <a href="projects/projects.html" class="nav-dock-item !flex !flex-row !items-center !justify-center !p-2 ${window.location.pathname.endsWith('projects.html') ? 'active' : ''}">
               <span class="!mt-0">Projects</span>
             </a>
-            <a href="contact.html" class="nav-dock-item !flex !flex-row !items-center !justify-center !p-2 ${window.location.pathname.endsWith('contact.html') ? 'active' : ''}">
+            <a href="contact/contact.html" class="nav-dock-item !flex !flex-row !items-center !justify-center !p-2 ${window.location.pathname.endsWith('contact.html') ? 'active' : ''}">
               <span class="!mt-0">Contact</span>
             </a>
           </div>
@@ -221,7 +221,7 @@
 
   <!-- Icon rendering (lucide.createIcons) now happens automatically
        inside script.js, so no extra script tag is needed here. -->
-  <script src="js/script.js"></script>
+  <script src="src/js/script.js"></script>
 
 </body>
 </html>
