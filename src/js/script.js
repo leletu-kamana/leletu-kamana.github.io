@@ -248,60 +248,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const form = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submit-btn');
-const statusText = document.getElementById('form-status');
+const status = document.getElementById('form-status');
 
 form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Basic Validation Matching Your Project Controls
-    const nameField = form.querySelector('[name="name"]').value.trim();
-    const messageField = form.querySelector('[name="message"]').value.trim();
+  const formData = new FormData(form);
 
-    if (nameField.length < 2) {
-        statusText.innerText = "Please enter a valid name.";
-        statusText.className = "text-center mt-4 text-sm font-medium text-red-400";
-        statusText.classList.remove('hidden');
-        return;
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = "Sending...";
+  submitBtn.disabled = true;
+
+  status.classList.add("hidden");
+
+  try {
+    const response = await fetch(
+      "https://api.web3forms.com/submit",
+      {
+        method: "POST",
+        body: formData
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.success) {
+      status.textContent =
+        "✅ Your message has been sent successfully!";
+      status.className =
+        "text-green-400 text-center mt-4 text-sm font-medium";
+
+      form.reset();
+    } else {
+      status.textContent =
+        "❌ " + (data.message || "Failed to send message.");
+      status.className =
+        "text-red-400 text-center mt-4 text-sm font-medium";
     }
-    if (messageField.length < 10) {
-        statusText.innerText = "Message should be 10–5000 characters.";
-        statusText.className = "text-center mt-4 text-sm font-medium text-red-400";
-        statusText.classList.remove('hidden');
-        return;
-    }
+  } catch (error) {
+    console.error(error);
 
-    const formData = new FormData(form);
-    formData.append("access_key", "a9577df9-29af-46ee-82d1-72e8593ab828");
-
-    const originalText = submitBtn.textContent;
-
-    submitBtn.textContent = "Sending...";
-    submitBtn.disabled = true;
-    statusText.classList.add('hidden'); // Clear previous visual states
-
-    try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            statusText.innerText = "Success! Your message has been sent.";
-            statusText.className = "text-center mt-4 text-sm font-medium text-green-400";
-            form.reset();
-        } else {
-            statusText.innerText = "Error: " + data.message;
-            statusText.className = "text-center mt-4 text-sm font-medium text-red-400";
-        }
-
-    } catch (error) {
-        statusText.innerText = "Something went wrong. Please try again.";
-        statusText.className = "text-center mt-4 text-sm font-medium text-red-400";
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        statusText.classList.remove('hidden'); // Smoothly reveal final status state
-    }
+    status.textContent =
+      "❌ Something went wrong. Please try again.";
+    status.className =
+      "text-red-400 text-center mt-4 text-sm font-medium";
+  } finally {
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }
 });
