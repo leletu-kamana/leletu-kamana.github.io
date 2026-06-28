@@ -246,38 +246,39 @@ document.addEventListener("DOMContentLoaded", function () {
   setFooterYear();
 });
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault();
+const form = document.getElementById('form');
+const submitBtn = form.querySelector('button[type="submit"]');
 
-  const statusText = document.getElementById('form-status');
-  const submitBtn = document.getElementById('submit-btn');
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  // Security Check: If a spam bot filled out our hidden honeypot field, block it silently
-  if (document.getElementById('honeypot').value !== "") {
-    console.warn("Spam bot detected.");
-    return;
-  }
+    const formData = new FormData(form);
+    formData.append("access_key", "a9577df9-29af-46ee-82d1-72e8593ab828");
 
-  // Visual feedback for the user
-  submitBtn.disabled = true;
-  submitBtn.innerText = "Sending Message...";
-  statusText.classList.remove('hidden', 'text-green-400', 'text-red-400');
-  statusText.innerText = "";
+    const originalText = submitBtn.textContent;
 
-  // Securely routes data through the EmailJS proxy gateway without revealing emails in code
-  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-    .then(() => {
-      statusText.innerText = "✓ Message sent directly to Leletu!";
-      statusText.classList.add('text-green-400');
-      this.reset(); // Clear input fields completely
-    })
-    .catch((error) => {
-      console.error('Failed to send...', error);
-      statusText.innerText = "✕ Delivery failed. Please try again or check your network connection.";
-      statusText.classList.add('text-red-400');
-    })
-    .finally(() => {
-      submitBtn.disabled = false;
-      submitBtn.innerText = "Send Message";
-    });
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Success! Your message has been sent.");
+            form.reset();
+        } else {
+            alert("Error: " + data.message);
+        }
+
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
 });
